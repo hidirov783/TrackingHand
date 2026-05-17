@@ -1,4 +1,17 @@
+<div align="center">
+
 # Hand Tracking Gesture Painter
+
+![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-Webcam-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
+![MediaPipe](https://img.shields.io/badge/MediaPipe-Hand_Tracking-00A67E?style=for-the-badge)
+![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Windows%20%7C%20Linux-111827?style=for-the-badge)
+
+Draw on your screen with real-time hand gestures.
+
+[Features](#features) · [Gesture Controls](#gesture-controls) · [Installation](#installation) · [Usage](#usage) · [Troubleshooting](#troubleshooting)
+
+</div>
 
 Hand Tracking Gesture Painter is a Python webcam app for drawing with hand gestures. It uses OpenCV for camera/video rendering and MediaPipe for real-time hand landmark tracking.
 
@@ -7,16 +20,29 @@ The app is built around a two-hand workflow:
 - the left hand selects the current tool or action;
 - the right hand moves the brush pointer with the index finger.
 
+> A small computer-vision playground for learning hand tracking, gesture recognition, and webcam interaction in Python.
+
+## Quick Start
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python main.py
+```
+
 ## Features
 
-- Real-time hand tracking from a webcam.
-- Two-hand gesture control.
-- Drawing and erasing on a persistent canvas.
-- Brush color switching.
-- Brush size control.
-- Canvas reset and PNG export.
-- On-screen HUD with FPS, current mode, control action, color, and brush size.
-- Fast mode for weaker laptops.
+| Feature | Description |
+| --- | --- |
+| Real-time tracking | Detects and tracks hands from your webcam |
+| Two-hand workflow | Left hand controls tools, right hand moves the pointer |
+| Drawing canvas | Persistent drawing layer over the camera feed |
+| Tool control | Draw, erase, change color, resize brush, clear canvas |
+| HUD | Shows FPS, mode, control action, brush size, and current color |
+| Export | Saves the drawing as `hand_drawing.png` |
+| Performance mode | Lower resolution and hidden landmarks for more FPS |
 
 ## Gesture Controls
 
@@ -50,11 +76,13 @@ python main.py --draw-hand Left --control-hand Right
 
 ## Requirements
 
-- Python 3.12
-- Webcam
-- OpenCV
-- MediaPipe
-- NumPy
+| Requirement | Version / Note |
+| --- | --- |
+| Python | `3.12` recommended |
+| Webcam | Built-in or external |
+| OpenCV | Installed from `requirements.txt` |
+| MediaPipe | Pinned to `0.10.21` |
+| NumPy | Installed from `requirements.txt` |
 
 This project currently pins `mediapipe==0.10.21` because newer Python/MediaPipe combinations may not provide the legacy `mp.solutions` API used by the app.
 
@@ -198,4 +226,3 @@ python main.py --width 960 --height 540 --hide-landmarks --model-complexity 0
 - Do not commit `.venv/`, `__pycache__/`, `.matplotlib/`, or generated drawings.
 - The included `.gitignore` excludes local runtime files.
 - Add a license file if you want others to reuse the project publicly.
-# TrackingHand
