@@ -198,3 +198,4 @@ python main.py --width 960 --height 540 --hide-landmarks --model-complexity 0
 - Do not commit `.venv/`, `__pycache__/`, `.matplotlib/`, or generated drawings.
 - The included `.gitignore` excludes local runtime files.
 - Add a license file if you want others to reuse the project publicly.
+# TrackingHand
